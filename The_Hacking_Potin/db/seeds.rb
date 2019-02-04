@@ -23,12 +23,12 @@ end
 
 ## Quelques comment de potins
 20.times do
-	Comment.create(content: Faker::Lorem.paragraphs, user: User.all.sample, commenteable: Potin.all.sample)
+	Comment.create(content: Faker::Lorem.paragraphs, user: User.all.sample, commentable: Potin.all.sample)
 end
 
 ## Puis quelques comment de comment, des bebes comment quoi
 20.times do
-	Comment.create(content: Faker::Lorem.paragraphs, user: User.all.sample, commenteable: Comment.all.sample)
+	Comment.create(content: Faker::Lorem.paragraphs, user: User.all.sample, commentable: Comment.all.sample)
 end
 
 # Des likes polymorphics, comme ca on peut liker un article OU un comment, mais forcement un des deux.

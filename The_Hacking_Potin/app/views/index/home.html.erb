@@ -1,2 +1,20 @@
-<h1>Index#home</h1>
+<h1>Accueil</h1>
+
+
+<h3><%=link_to "La team de suceur de nouille", team_path%></h3>
+
+<h3><%= link_to "contacte nous", contact_path%></h3>
+
+
+<% @potin.each do |potin| %>
+<div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+	<div class="card-header"><%= potin.user.first_name %><br/></div>
+	<div class="card-body">
+		<p class="card-text"><%= potin.content %></p>
+	</div>
+</div>
+<% end %>
+
 <p>Find me in app/views/index/home.html.erb</p>
+
+
