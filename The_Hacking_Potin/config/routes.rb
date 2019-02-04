@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/bienvenue', to: 'bienvenue#home'
+  get '/user/:id', to: 'user#home'
   get '/contact', to: 'contact#home'
   get '/team', to: 'team#home'
   get '/', to: 'index#home'
