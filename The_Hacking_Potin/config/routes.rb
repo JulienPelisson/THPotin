@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get '/user/:id', to: 'user#home'
+  get '/user/:id/:user', to: 'index#profile', as: 'profiles'
+  get '/user/:id', to: 'index#potin', as: 'potins'
   get '/contact', to: 'contact#home'
   get '/team', to: 'team#home'
   get '/', to: 'index#home' do 
