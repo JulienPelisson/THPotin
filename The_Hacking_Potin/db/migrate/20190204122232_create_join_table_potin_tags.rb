@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateJoinTablePotinTags < ActiveRecord::Migration[5.2]
   def change
     create_table :join_table_potin_tags do |t|

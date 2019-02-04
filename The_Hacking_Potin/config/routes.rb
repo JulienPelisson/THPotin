@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get '/user/:id', to: 'user#home'
   get '/contact', to: 'contact#home'
