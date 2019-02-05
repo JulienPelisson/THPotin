@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get '/user/:id', to: 'index#potin', as: 'potins'
   # get '/contact', to: 'contact#home'
   # get '/team', to: 'team#home'
-   get '/', to: 'index#home' do 
+   get '/', to: 'index#home'  
   # 	erb :index, locals: {gossip: Gossip.all}
   # end
 
