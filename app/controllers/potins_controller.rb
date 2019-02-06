@@ -6,15 +6,16 @@ class PotinsController < ApplicationController
   end
 
   def show
-  @potin = Potin.all 
+  @potin = Potin.all(params[:id])
   end
 
   def new
-
+    @potin = Potin.new
     # Méthode qui crée un potin vide et l'envoie une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
   end
 
   def create
+    @potin = Potin.new(params[:user, :content]).save
 
 
     # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
