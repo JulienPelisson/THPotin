@@ -5,7 +5,7 @@
 
 <h3><%= link_to "contacte nous", contact_path%></h3>
 
-<input type="post" value ="envie de créer un potin?"/><%= link_to "Toi aussi tu veux potiner?", new_potin_path, class:"btn btn-primary" %><br><br>
+<%= link_to "Toi aussi tu veux potiner?", new_potin_path, class:"btn btn-primary" %><br><br>
 <% @potin.each do |potin| %>
 <div class="card d-inline-flex text-white bg-primary mb-5" style="max-width: 15rem;">
 	<%= link_to "Coucou, tu veux voir ma bite", potins_path(potin.id), class:"btn btn-primary" %>
