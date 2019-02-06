@@ -15,7 +15,7 @@ class PotinsController < ApplicationController
   end
 
   def create
-    @potin = Potin.new(params[:user, :content]).save
+    @potin = Potin.new(params[:user, :content])
 
 
     # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
