@@ -1,10 +1,24 @@
+<% if @potin.errors.any? %>
+<div class="alert alert-dismissible alert-danger">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<strong>Mange mes couilles</strong>
+</div>
+
+
+<% end %><br/><br/><br/><br/>
+
 <h1>Alors comme ça on veut créer un nouveau potin?</h1>
 
-<form action="" method="POST">
-  <input type="text" name="user_id"><br/>
-  <input type="submit" value="Envoyer le formulaire">
-  <p>
-  	<label for="content">Racontez nous donc votre potin !</label><br/>
-  	<textarea name="content" id="content"></textarea>
-  </p>
+<form action= <%= potins_path %> method="POST">
+	<label for="content">Titre?</label><br/>
+	<input type="text" name="title"><br/>
+	<br/><br
+	<p>
+		<label for="content">Racontez nous donc votre potin !</label><br/>
+		<textarea name="content" id="content"></textarea><br/>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="submit" value="Tiens, voilà du potin!">
+	</p>
 </form>
+
+

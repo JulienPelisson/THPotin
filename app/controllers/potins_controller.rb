@@ -1,23 +1,30 @@
 class PotinsController < ApplicationController
  def index
-   def home 
-    @potin = Potin.all
-  end 
-  end
 
-  def show
+  @potins = Potin.all
+end 
+
+  
+def show
   @potin = Potin.find(params[:id])
-  end
+end
 
-  def new
-    @potin = Potin.new
+def new
+  @potin = Potin.new
     # Méthode qui crée un potin vide et l'envoie une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
   end
 
   def create
-    @potin = Potin.new(params[:user, :content])
+    u = User.last
+    @potin = Potin.new(title: params[:title], content: params[:content], user: u)
 
+    if @potin.save
+      redirect_to potins_path
+      flash[:notice] = "Achievement unlocked : Ca potine dur !"
+    else 
+      render new_potin_path
 
+    end
     # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
     # pour info, le contenu de ce formulaire sera accessible dans le hash params (ton meilleur pote)
     # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
