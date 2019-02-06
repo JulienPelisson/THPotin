@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   # 	erb :index, locals: {gossip: Gossip.all}
   # end
   resources :potins
-  resources :index
-  resources :bienvenue
-  resources :contact
-  resources :team
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/contact', to: 'contact#home'
+  get '/team', to: 'team#home'
+  get '/', to: 'index#home' do 
+   #For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
