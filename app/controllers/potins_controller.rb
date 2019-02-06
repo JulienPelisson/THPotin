@@ -6,7 +6,7 @@ class PotinsController < ApplicationController
   end
 
   def show
-  @potin = Potin.all(params[:id])
+  @potin = Potin.find(params[:id])
   end
 
   def new
