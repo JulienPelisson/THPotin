@@ -1,7 +1,0 @@
-<h2>Potin N <%= params[:id]%></h2>
-
-<h3> Auteur = <%= @potin[params[:id].to_i-1].user.first_name%></h3>
-
-
-<h4><%= @potin[params[:id].to_i-1].content %></h4>
-<%= link_to "Page de l'auteur", profiles_path(params[:id], @potin[params[:id].to_i-1].user.first_name), class:"btn btn-primary" %>

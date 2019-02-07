@@ -1,4 +1,12 @@
-<h3>Voici la page de l'auteur du potin</h3>
 
-<p>Prenom : <%= @potin[params[:id].to_i].user.first_name%></p>
-<p>Nom : <%= @potin[params[:id].to_i].user.last_name%><p>
+
+<h2>Potin N <%= params[:id]%></h2>
+
+<h3>Auteur = <%= @potins.user.first_name%></h3>
+
+<h3>L'auteur habite la ville = <%= @potins.user.city%></h3>
+
+
+
+<h4><%= @potins.content[1...-1] %></h4>
+<%= link_to "Page de l'auteur"%>

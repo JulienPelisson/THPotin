@@ -6,7 +6,7 @@ end
 
   
 def show
-  @potin = Potin.find(params[:id])
+  @potins = Potin.find(params[:id])
 end
 
 def new

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class City < ApplicationRecord
-  has_many :users
+	has_many :users, dependent: :destroy
 end

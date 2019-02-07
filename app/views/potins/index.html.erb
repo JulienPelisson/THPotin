@@ -3,17 +3,19 @@
 <h1>Accueil</h1>
 
 
-<h3><%=link_to "La team de suceur de nouille", team_path%></h3>
+<h3><%=link_to "Venez découvrir la team !", team_path%></h3>
 
 <h3><%= link_to "contacte nous", contact_path%></h3>
 
 <%= link_to "Toi aussi tu veux potiner?", new_potin_path, class:"btn btn-primary" %><br><br>
 <% @potins.each do |potin| %>
+
+
 <div class="card d-inline-flex text-white bg-primary mb-5" style="max-width: 15rem;">
-	<%= link_to "Coucou, tu veux voir ma bite", potins_path(potin.id), class:"btn btn-primary" %>
+	<%= link_to "Hey, c'est quoi ce potin?", potin_path(potin.id), class:"btn btn-primary" %>
 	<div class="card-header"><%= potin.user.first_name %><br/></div>
 	<div class="card-body">
-		<p class="card-text"><%= potin.content %></p>
+		<p class="card-text"><%= potin.content[1...-1] %></p>
 	</div>
 </div>
 <% end %>

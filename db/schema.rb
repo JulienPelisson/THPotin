@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_122923) do
+ActiveRecord::Schema.define(version: 2019_02_04_112859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 2019_02_04_122923) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
-    t.string "commentable_type"
-    t.bigint "commentable_id"
+    t.string "commenteable_type"
+    t.bigint "commenteable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["commenteable_type", "commenteable_id"], name: "index_comments_on_commenteable_type_and_commenteable_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -42,18 +42,17 @@ ActiveRecord::Schema.define(version: 2019_02_04_122923) do
     t.index ["recipient_id"], name: "index_join_table_mp_users_on_recipient_id"
   end
 
-  create_table "join_table_potin_tags", force: :cascade do |t|
+  create_table "joint_table_potin_tags", force: :cascade do |t|
     t.bigint "potin_id"
     t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["potin_id"], name: "index_join_table_potin_tags_on_potin_id"
-    t.index ["tag_id"], name: "index_join_table_potin_tags_on_tag_id"
+    t.index ["potin_id"], name: "index_joint_table_potin_tags_on_potin_id"
+    t.index ["tag_id"], name: "index_joint_table_potin_tags_on_tag_id"
   end
 
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "to"
     t.string "likeable_type"
     t.bigint "likeable_id"
     t.datetime "created_at", null: false
@@ -98,5 +97,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_122923) do
   end
 
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "users"
+  add_foreign_key "potins", "users"
   add_foreign_key "users", "cities"
 end

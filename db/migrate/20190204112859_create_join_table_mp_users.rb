@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CreateJoinTableMpUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :join_table_mp_users do |t|
