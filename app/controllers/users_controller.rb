@@ -1,18 +1,18 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 	def index
-		@potins = Potin.all
+		@users = User.all
 	end 
 
 
 	def show
-		@user = User.find(params[:id])
+		@users = User.find(params[:id])
 	end
 
 	def new
 		    # Méthode qui crée un potin vide et l'envoie une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
-  end
+     end
 
-  def create
+     def create
   	# u = User.last
   	# @potin = Potin.new(title: params[:title], content: params[:content], user: u)
 
@@ -21,14 +21,13 @@ class UserController < ApplicationController
   	# 	flash[:notice] = "Achievement unlocked : Ca potine dur !"
   	# else 
   	# 	render new_potin_path
-
-  	end
+  end
     # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
     # pour info, le contenu de ce formulaire sera accessible dans le hash params (ton meilleur pote)
     # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
-  end
 
-  def edit
+
+    def edit
     # Méthode qui récupère le potin concerné et l'envoie à la view edit (edit.html.erb) pour affichage dans un formulaire d'édition
   end
 
@@ -43,3 +42,4 @@ class UserController < ApplicationController
     # Une fois la suppression faite, on redirige généralement vers la méthode index (pour afficher la liste à jour)
   end
 end
+

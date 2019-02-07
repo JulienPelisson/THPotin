@@ -1,12 +1,12 @@
 
 
-<h2>Potin N <%= params[:id]%></h2>
+<h2>Potin n°<%= params[:id]%></h2>
 
 <h3>Auteur = <%= @potins.user.first_name%></h3>
 
-<h3>L'auteur habite la ville = <%= @potins.user.city%></h3>
+
 
 
 
 <h4><%= @potins.content[1...-1] %></h4>
-<%= link_to "Page de l'auteur"%>
+<%= link_to "Page de l'auteur", user_path(@potins.user.id)%>

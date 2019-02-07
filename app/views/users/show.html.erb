@@ -1,0 +1,8 @@
+<h3>Voici l'auteur du potin</h3>
+
+<p>Prénom : <%= @users.first_name%></p>
+<p>Nom : <%= @users.last_name%><p>
+<p>Description : <%= @users.description[1..-1]%></p>
+<p>Son email : <%= @users.email%></p>
+<p>Il habite à <%= @users.city.name%> </p>
+

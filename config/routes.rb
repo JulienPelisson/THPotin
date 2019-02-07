@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   get '/', to: 'index#home' do 
   	erb :index, locals: {gossip: Gossip.all}
 
-  resources :users
    #For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  end
+
+ resources :users
+
+
+
 end
