@@ -1,0 +1,10 @@
+<h1>Bienvenue sur la page de la ville <%= @city.name %></h1>
+
+<p>Voici tout les potins associés à la ville de <%= @city.name %></p>
+
+
+<% @array_of_gossips.each do |gossip| %>
+	<h3><%=gossip.title%></h3>
+	<p><%=gossip.content[1...-1]%></p>
+<%end%>
+

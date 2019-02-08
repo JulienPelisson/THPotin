@@ -10,3 +10,5 @@
 
 <h4><%= @potins.content[1...-1] %></h4>
 <%= link_to "Page de l'auteur", user_path(@potins.user.id)%>
+<%= link_to "Ville de l'auteur", city_path(params[:id])%>
+<p><%= link_to 'Supprimer le potin', potin_path, class:"btn btn-primary btn-md", role:"button", :data => {:confirm => "You sure?", :method => "delete"}%></p>

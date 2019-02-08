@@ -1,0 +1,16 @@
+<h1>Editez votre potin :</h1><br><br><br>
+
+
+<%= form_for @potin do |potin| %>
+	<div class="form-group">
+	<label>Titre du potin</label>
+	<%= potin.text_field :title, class: 'form-control'%>
+	</div>
+	<div class="form-group">
+		<label>Contenu du potin</label>
+		<%= potin.text_area :content, class: 'form-control'%>
+	</div>
+	<div class="form-group">
+		<button type="submit">J'ai fini mes modifications !</button>
+	</div>
+<%end%>
