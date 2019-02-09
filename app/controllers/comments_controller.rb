@@ -13,14 +13,15 @@ class CommentsController < ApplicationController
 
 	
 	def create
-		@comments = Comment.new(user: params[:User_text], content:params[:content])
+		@comment = Comment.new(user: User.all.sample, content:params[:Comment_text], commenteable: Potin.find(params[:potin_id]))
+		if @comment.save
+			flash[:notice] = "Votre commentaire a bien été créé"
+			redirect_to potin_path(params[:potin_id])
+		else 
+		flash[:notice] = "Votre commentaire n'a pas bien été créé"
+		redirect_to potin_path(params[:potin_id])
 		
-		puts @comments.errors.full_messages
-
-		@comments.save
-		flash[:notice] = "Votre commentaire a bien été créé"
-		redirect_to potins_path
-
+		end
 	end
 
 

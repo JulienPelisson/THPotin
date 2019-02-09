@@ -18,15 +18,9 @@
 <% end %><br><br>
 <h4>Ajouter un commentaire</h4>
 
-<form action= <%= comments_path %> method="POST">
-	<label for="user">Votre nom?</label><br/>
-	<input type="text" name="user"><br/>
-	<p>
-		<label for="comment_content">Ecrivez votre commentaire ici</label><br/>
-		<textarea name="content" id="content"></textarea><br/>
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<input type="submit" value="Ajouter votre commentaire!">
-	</p>
-</form>
+<%= form_tag(potin_comments_path(@potins.id)) do -%>
+                    <div><%= text_area_tag 'Comment_text', nil, placeholder: 'Raconte moi tout...', size: "40x4" %></div><br>
+                    <div class='mt-auto'><%= submit_tag 'Commenter' %></div>
+                <% end -%>
 
 <p><%= link_to 'Supprimer le potin', potin_path, class:"btn btn-danger btn-md", role:"button", :data => {:confirm => "You sure?", :method => "delete"}%></p>
