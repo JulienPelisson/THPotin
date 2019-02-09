@@ -5,6 +5,6 @@ class Potin < ApplicationRecord
   has_many :joint_table_potin_tags
   has_many :tags, through: :joint_table_potin_tags
 
-  validates :title, presence: true #, length: { in: 3..14 }
+  validates :title, presence: true #, length: { in: 3..20 }
   validates :content, presence: true
 end

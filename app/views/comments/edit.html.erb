@@ -1,0 +1,13 @@
+<h1>Editez votre commentaire :</h1><br><br><br>
+
+
+<%= form_for @comments  do |comment|%>
+<div class="form-group">
+	<label>Editer le contenu du commentaire :</label>
+	<%= comment.text_area :content, class: 'form-control'%>
+</div>
+<div class="form-group">
+	<button type="submit">J'ai fini mes modifications !</button>
+</div>
+<%end%>
+

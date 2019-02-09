@@ -4,11 +4,28 @@
 
 <h3>Auteur = <%= @potins.user.first_name%></h3>
 
-
-
-
-
 <h4><%= @potins.content[1...-1] %></h4>
 <%= link_to "Page de l'auteur", user_path(@potins.user.id)%>
 <%= link_to "Ville de l'auteur", city_path(params[:id])%>
-<p><%= link_to 'Supprimer le potin', potin_path, class:"btn btn-primary btn-md", role:"button", :data => {:confirm => "You sure?", :method => "delete"}%></p>
+
+<% @potins.comments.each do |comment| %>
+
+
+<h4>Commentaires</h4>
+<p><%= comment.user.first_name%></p>
+<p><small><%=comment.content[1...-1]%></small></p>
+<a href="<%= edit_comment_path(comment.id)%>" class="btn btn-primary">Je veux éditer mon commentaire</a>
+<% end %>
+<h4>Ajouter un commentaire</h4>
+<form action= <%= comments_path %> method="POST">
+	<label for="user">Votre nom?</label><br/>
+	<input type="text" name="User"><br/>
+	<p>
+		<label for="comment_content">Ecrivez votre commentaire ici</label><br/>
+		<textarea name="content" id="content"></textarea><br/>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="submit" value="Ajouter votre commentaire!">
+
+	</p>
+
+	<p><%= link_to 'Supprimer le potin', potin_path, class:"btn btn-danger btn-md", role:"button", :data => {:confirm => "You sure?", :method => "delete"}%></p>

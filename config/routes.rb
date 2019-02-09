@@ -8,17 +8,26 @@ Rails.application.routes.draw do
   # get '/', to: 'index#home' do 
   # 	erb :index, locals: {gossip: Gossip.all}
   # end
-  resources :potins
-  get '/contact', to: 'contact#home'
-  get '/team', to: 'team#home'
-  get '/', to: 'index#home' do 
-  	erb :index, locals: {gossip: Gossip.all}
+
+  resources :potins do
+   
+   resources :comments
 
    #For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  end
 
- resources :users
+ resources :users do
+   resources :comments
+ end
 
+ resources :comments
  resources :city
 
+
+ get '/contact', to: 'contact#home'
+ get '/team', to: 'team#home'
+ get '/', to: 'index#home' do 
+ end
+
 end
+
