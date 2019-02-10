@@ -1,0 +1,20 @@
+<h2>Bienvenue, vous pouvez créer votre compte ici !</h2>
+
+
+<%= form_for @user do %>
+	<div>
+		<%=text_field_tag 'first_name', nil, placeholder: 'Prénom'%>
+	</div><br>
+	<div>
+		<%=text_field_tag 'email', nil, placeholder: 'Email@email.com'%>
+	</div><br>
+	<div>
+		<%=text_field_tag 'password', nil, placeholder: 'Votre mot de passe'%>
+	</div><br>
+	<div>
+		<%=text_field_tag 'password_confirmation', nil, placeholder: 'Confirmer votre mot de passe'%>
+	</div><br>
+	<div>
+		<%=submit_tag 'Enregistrer'%>
+	</div><br>
+	<%end%>

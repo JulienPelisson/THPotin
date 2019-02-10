@@ -1,0 +1,10 @@
+<h2>Déjà membre? C'est par ici:</h2><br>
+<%= form_tag(connexion_index_path) do %>
+ 	<div><%=text_field_tag 'email', nil, placeholder: 'Email'%></div>
+ 	<div><%=text_field_tag 'Mot de passe', nil, type: 'Password'%></div>
+	<%= submit_tag 'connexion' %>
+ <%end%><br><br>
+
+ <h2>Nouvel utilisateur? Créer votre compte ici : </h2>
+  <%= link_to "Créer son compte", new_user_path %>
+ 

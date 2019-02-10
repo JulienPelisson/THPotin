@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
  resources :comments, except:[:create]
  resources :city
-
+ resources :connexion
+ resources :sessions, only: [:new, :create, :destroy]
 
  get '/contact', to: 'contact#home'
  get '/team', to: 'team#home'

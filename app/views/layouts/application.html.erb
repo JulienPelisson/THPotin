@@ -23,11 +23,16 @@
 
     <div class="d-flex collapse navbar-collapse navbar-dark bg-dark" id="navbar-color-01">
       <ul class="d-flex-inline-center navbar-nav mr-auto ">
-
+        
+        <%= link_to "Accueil", potins_path, class:"nav-item nav-link" %>
         
         <%= link_to "Besoin de nous contacter?", contact_path, class:"nav-item nav-link" %>
         
         <%= link_to "Envie de nous découvrir?", team_path, class:"nav-item nav-link"%>
+
+        <%= link_to "Se connecter", connexion_index_path, class:"nav-item nav-link"%>
+
+
         
       </ul>
     </div>

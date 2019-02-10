@@ -10,4 +10,5 @@
 	<button type="submit">J'ai fini mes modifications !</button>
 </div>
 <%end%>
+<p><%= link_to 'Supprimer le commentaire', comment_path, class:"btn btn-danger btn-md", role:"button", :data => {:confirm => "You sure?", :method => "delete"}%></p>
 

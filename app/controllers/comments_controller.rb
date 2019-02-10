@@ -18,9 +18,9 @@ class CommentsController < ApplicationController
 			flash[:notice] = "Votre commentaire a bien été créé"
 			redirect_to potin_path(params[:potin_id])
 		else 
-		flash[:notice] = "Votre commentaire n'a pas bien été créé"
-		redirect_to potin_path(params[:potin_id])
-		
+			flash[:notice] = "Votre commentaire n'a pas bien été créé"
+			redirect_to potin_path(params[:potin_id])
+			
 		end
 	end
 
@@ -38,4 +38,11 @@ class CommentsController < ApplicationController
   	@comments.update(post_params)
   	redirect_to potins_path
   end
+
+  def destroy
+  	@comments = Comment.find(params[:id])
+  	@comments.destroy
+  	redirect_to potins_path
+  end
+
 end
