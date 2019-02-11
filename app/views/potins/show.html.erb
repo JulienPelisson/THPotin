@@ -15,12 +15,13 @@
 <p><%= comment.user.first_name%></p>
 <p><small><%=comment.content%></small></p>
 <a href="<%= edit_comment_path(comment.id)%>" class="btn btn-primary">Je veux éditer mon commentaire</a>
-<% end %><br><br>
+<br><br>
+<%end%>
 <h4>Ajouter un commentaire</h4>
 
 <%= form_tag(potin_comments_path(@potins.id)) do -%>
-                    <div><%= text_area_tag 'Comment_text', nil, placeholder: 'Raconte moi tout...', size: "40x4" %></div><br>
-                    <div class='mt-auto'><%= submit_tag 'Commenter' %></div>
-                <% end -%>
+<div><%= text_area_tag 'Comment_text', nil, placeholder: 'Raconte moi tout...', size: "40x4" %></div><br>
+<div class='mt-auto'><%= submit_tag 'Commenter' %></div>
+<% end -%>
 
 <p><%= link_to 'Supprimer le potin', potin_path, class:"btn btn-danger btn-md", role:"button", :data => {:confirm => "You sure?", :method => "delete"}%></p>

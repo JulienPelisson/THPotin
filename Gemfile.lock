@@ -51,10 +51,13 @@ GEM
     autoprefixer-rails (9.4.7)
       execjs
     bcrypt (3.1.12)
+<<<<<<< HEAD
     better_errors (2.5.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
+=======
+>>>>>>> refs/remotes/origin/master
     bindex (0.5.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
@@ -244,8 +247,11 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+<<<<<<< HEAD
   better_errors
   binding_of_caller
+=======
+>>>>>>> refs/remotes/origin/master
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.2.1)
   byebug

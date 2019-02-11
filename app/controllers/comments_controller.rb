@@ -39,9 +39,10 @@ class CommentsController < ApplicationController
   	redirect_to potins_path
   end
 
-  def destroy
+  def destroy 
   	@comments = Comment.find(params[:id])
   	@comments.destroy
+  	flash[:notice] = "Ce commentaire a bien été supprimé"
   	redirect_to potins_path
   end
 
